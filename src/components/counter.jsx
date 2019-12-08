@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 1,
+    count: 4,
     imageUrl: "http://picsum.photos/250",
     arraySamp: ["one", "two", "three"]
+    // id: this.props.counters.id
   };
 
   style = {
@@ -50,6 +51,12 @@ class Counter extends Component {
           className="btn btn-secondary btn-sm"
         >
           Increment
+        </button>
+        <button
+          className="btn btn-danger btn-sm mx-2"
+          onClick={() => this.props.onDelete(this.props.counters.id)}
+        >
+          Delete
         </button>
         {this.conditionCheck()}
       </React.Fragment>
